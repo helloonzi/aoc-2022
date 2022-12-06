@@ -1,0 +1,57 @@
+#include <iostream>
+#include <fstream> 
+using namespace std; 
+
+/* 
+get number from file first
+check that we can get the numbers?
+add them together
+find the largest one
+*/
+
+int main() {
+
+  //listing variables ?
+  string myText;
+  int totalCal;
+  int bigCal;
+  int cal;
+
+  ifstream data("2022aocDay1.txt");//reading file
+
+  /* printing the stuff out hehe
+  while (getline(data, myText)) {
+    if (myText.empty()) {
+      cout << "0" << endl;
+      }
+    else {
+      cal = stoi(myText);
+      cout << cal << endl;
+      }
+  } 
+  */
+
+  totalCal = cal = bigCal = 0;
+  
+  while (getline(data, myText)) {
+    if (myText.empty()) {
+      if (totalCal > bigCal){
+        bigCal = totalCal;
+        totalCal = 0;
+      }
+      else{
+        totalCal = 0;
+      }
+    }
+    else {
+      cal = stoi(myText);
+      totalCal += cal;
+    }
+  }
+
+  cout << bigCal;
+
+  return 0;
+    
+ }
+  
