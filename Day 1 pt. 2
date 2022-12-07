@@ -1,0 +1,41 @@
+#include <iostream>
+#include <fstream> 
+#include <vector>
+#include <algorithm>
+using namespace std; 
+
+int main() {
+
+  //listing variables ?
+  string myText;
+  int totalCal;
+  int cal;
+  vector<int> calOfEachElf;
+  
+  ifstream data("2022aocDay1.txt");//reading file
+  
+  while (getline(data, myText)){
+    if (myText.empty()) {
+      calOfEachElf.push_back(totalCal); 
+      totalCal = 0;
+      
+    }
+    else {
+      cal = stoi(myText);
+      totalCal += cal;
+    }
+  }
+
+  sort(calOfEachElf.begin(), calOfEachElf.end(), greater<int>());
+  cout << calOfEachElf[0] << endl << calOfEachElf[1] << endl << calOfEachElf[2] << endl << calOfEachElf[0] + calOfEachElf[1] + calOfEachElf[2];
+  
+
+  
+
+  //cout << first << endl << second << endl << third << endl;
+  //cout << first + second + third;
+
+  return 0;
+    
+ }
+  
