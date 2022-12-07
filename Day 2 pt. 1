@@ -1,0 +1,46 @@
+#include <iostream>
+#include <fstream> 
+using namespace std; 
+
+int main() {
+
+  int totalScore;
+  string myText;
+  ifstream data("input.txt");//reading file
+
+  totalScore = 0; 
+
+  while (getline(data, myText)) {
+    if (myText == "A X") {
+      totalScore += 4;
+    }
+    else if (myText == "A Y" ) {
+      totalScore += 8;
+    }
+    else if (myText == "A Z") {
+      totalScore += 3;
+    }
+    else if (myText == "B X") {
+      totalScore += 1;
+    }
+    else if (myText == "B Y") {
+      totalScore += 5;
+    }
+    else if (myText == "B Z") {
+      totalScore += 9;
+    }
+    else if (myText == "C X") {
+      totalScore += 7;
+    }
+    else if (myText == "C Y") {
+      totalScore += 2;
+    }
+    else if (myText == "C Z") {
+      totalScore += 6;
+    }
+  }
+    
+  cout << totalScore << endl;
+    
+  
+}
